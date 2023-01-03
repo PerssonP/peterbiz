@@ -1,14 +1,16 @@
 <script lang="ts">
+  import malmofoodsImg from './assets/malmofoods.png';
 </script>
 
 <main>
   <a href="https://aquifer.peter.biz" class="wrapper">
-    <div class="slide">
+    <div class="slide" id="aquifier">
       <p>Twitch aquifier</p>
     </div>
   </a>
   <a href="https://malmofoods.peter.biz" class="wrapper">
     <div class="slide">
+      <img src={malmofoodsImg} />
       <p>Malmö Foods</p>
     </div>
   </a>
@@ -20,10 +22,16 @@
 </main>
 
 <style>
+  main {
+    overflow: hidden;
+  }
+
   .slide {
     position: relative;
     height: 150px;
-    z-index: 300;
+    z-index: 2;
+
+    background-color: rgb(0, 0, 0);
   }
 
   .slide::before {
@@ -34,22 +42,24 @@
     height: 100%;
     width: calc(100% + 40px);
     left: -20px;
-    z-index: 1;
+    z-index: -1;
 
     transition: 0.25s;
   }
 
-  .slide::after {
+  .wrapper img {
     position: absolute;
-    background-color: aqua;
-    content: 'Arrow';
-    z-index: 0;
     height: 100%;
     width: 100%;
+    object-fit: scale-down;
+    object-position: left;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 10%, transparent 50%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 10%, transparent 50%);
+    left: 0px;
+    transition: 0.25s;
   }
 
   .wrapper:hover .slide::before {
-    transition: 0.25s;
     left: -500px;
   }
 
@@ -57,5 +67,7 @@
     position: absolute;
     z-index: 2;
     margin: 0;
+    left: 50%;
+    top: 50%;
   }
 </style>
