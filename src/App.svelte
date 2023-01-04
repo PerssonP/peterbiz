@@ -1,21 +1,22 @@
 <script lang="ts">
-  import malmofoodsImg from './assets/malmofoods.png';
 </script>
 
 <main>
   <a href="https://aquifer.peter.biz" class="wrapper">
-    <div class="slide" id="aquifier">
+    <div class="slide">
+      <div class="backgroundimage" style="background-image: url(images/twitchaquifier.png)" />
       <p>Twitch aquifier</p>
     </div>
   </a>
   <a href="https://malmofoods.peter.biz" class="wrapper">
     <div class="slide">
-      <img src={malmofoodsImg} />
+      <div class="backgroundimage" style="background-image: url(images/malmofoods.png)" />
       <p>Malmö Foods</p>
     </div>
   </a>
   <a href="https://mrtn.peter.biz" class="wrapper">
     <div class="slide">
+      <div class="backgroundimage" style="background-image: url()" />
       <p>mrtn</p>
     </div>
   </a>
@@ -47,20 +48,17 @@
     transition: 0.25s;
   }
 
-  .wrapper img {
+  .wrapper:hover .slide::before {
+    left: -25%;
+  }
+
+  .slide .backgroundimage {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: scale-down;
-    object-position: left;
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 10%, transparent 50%);
+    background-size: auto 150px;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 5%, transparent 50%);
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 10%, transparent 50%);
-    left: 0px;
-    transition: 0.25s;
-  }
-
-  .wrapper:hover .slide::before {
-    left: -500px;
   }
 
   .slide p {
