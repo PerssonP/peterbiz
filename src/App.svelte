@@ -14,10 +14,10 @@
       <p>Malmö Foods</p>
     </div>
   </a>
-  <a href="https://mrtn.peter.biz" class="wrapper">
+  <a href="https://cv.peter.biz/peter/main" class="wrapper">
     <div class="slide">
       <div class="backgroundimage" style="background-image: url()" />
-      <p>mrtn</p>
+      <p>CV</p>
     </div>
   </a>
 </main>
